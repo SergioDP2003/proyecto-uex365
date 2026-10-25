@@ -1,0 +1,115 @@
+/* TransactionsStats.css – Historial de transacciones estilo bet365 */
+
+.transactions-stats {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(31, 244, 142, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    color: #ddd;
+}
+
+.transactions-stats h2 {
+    color: #1ff48e;
+    font-size: 1.3rem;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 8px rgba(31, 244, 142, 0.3);
+}
+
+.transactions-stats h3 {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin: 0 0 12px 0;
+}
+
+/* Resumen superior */
+.transactions-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.overview-card {
+    background: rgba(31, 244, 142, 0.05);
+    border: 1px solid rgba(31, 244, 142, 0.15);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.overview-card:hover {
+    border-color: rgba(31, 244, 142, 0.4);
+    box-shadow: 0 0 12px rgba(31, 244, 142, 0.2);
+}
+
+.overview-value {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #1ff48e;
+    margin-bottom: 5px;
+}
+
+.overview-label {
+    font-size: 0.85rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Lista de tipos */
+.transactions-by-type {
+    margin-top: 10px;
+}
+
+.type-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.type-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 10px 14px;
+    transition: background 0.2s;
+}
+
+.type-row:hover {
+    background: rgba(31, 244, 142, 0.05);
+}
+
+.type-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.type-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.type-count {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.type-amount {
+    font-weight: bold;
+    color: #1ff48e;
+    font-size: 1rem;
+}
+
+.no-transactions {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    padding: 15px;
+}

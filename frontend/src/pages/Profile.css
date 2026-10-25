@@ -1,0 +1,184 @@
+/* Profile.css – Estilo bet365 para la página de perfil */
+
+.profile-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at 30% 40%, #1a3a1a 0%, #0e0e0e 80%);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-page::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(31, 244, 142, 0.03) 0px,
+        rgba(31, 244, 142, 0.03) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    pointer-events: none;
+    animation: bgMove 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes bgMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.profile-shell {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Tarjetas genéricas */
+.loading-card,
+.error-card {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(31, 244, 142, 0.2);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    color: #ccc;
+}
+
+.loading {
+    color: #1ff48e;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 1rem;
+}
+
+/* Contenido del perfil */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Sección de estadísticas (bets + transactions) */
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Estilos para los componentes ProfileHeader, BetsStats, TransactionsStats 
+   se heredan de sus propios CSS si los tienen; aquí damos estilos base */
+
+.profile-edit-card {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(31, 244, 142, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    color: #ddd;
+}
+
+.profile-edit-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.profile-edit-header h2 {
+    color: #1ff48e;
+    margin: 0 0 8px 0;
+}
+
+.profile-edit-header p {
+    color: #aaa;
+    margin: 0;
+}
+
+.profile-edit-btn,
+.profile-save-btn,
+.profile-cancel-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.profile-edit-btn,
+.profile-save-btn {
+    background: linear-gradient(135deg, #126e51, #1ff48e);
+    color: #0b0b0b;
+}
+
+.profile-cancel-btn {
+    background: #333;
+    color: #eee;
+}
+
+.profile-save-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.profile-form-grid,
+.profile-readonly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.profile-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.profile-form-wide {
+    grid-column: 1 / -1;
+}
+
+.profile-form-group label,
+.profile-readonly-grid span {
+    color: #1ff48e;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.profile-form-group input {
+    background: #111;
+    border: 1px solid rgba(31, 244, 142, 0.25);
+    border-radius: 8px;
+    color: #eee;
+    padding: 10px 12px;
+}
+
+.profile-readonly-grid div {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.profile-edit-actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}

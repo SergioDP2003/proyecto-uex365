@@ -1,0 +1,131 @@
+/* ExchangeShop.css – Tienda de intercambio con estilo bet365 */
+
+.shop-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at 30% 40%, #1a3a1a 0%, #0e0e0e 80%);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-page::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(31, 244, 142, 0.03) 0px,
+        rgba(31, 244, 142, 0.03) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    pointer-events: none;
+    animation: bgMove 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes bgMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.shop-content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    padding: 30px 20px;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.shop-title {
+    font-size: 2rem;
+    color: #1ff48e;
+    text-shadow: 0 0 12px rgba(31, 244, 142, 0.5);
+    margin-bottom: 30px;
+}
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(31, 244, 142, 0.15);
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(31, 244, 142, 0.3);
+    border-color: rgba(31, 244, 142, 0.4);
+}
+
+.product-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.product-price strong {
+    color: #1ff48e;
+    font-size: 1.2rem;
+}
+
+.shop-buy-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #126e51, #0e5a40);
+    color: white;
+    box-shadow: 0 4px 10px rgba(18, 110, 81, 0.4);
+    margin-top: auto;
+}
+
+.shop-buy-btn:hover {
+    background: linear-gradient(135deg, #1b8c68, #126e51);
+    box-shadow: 0 6px 18px rgba(18, 110, 81, 0.7);
+    transform: translateY(-2px);
+}
+
+.shop-loading {
+    color: #1ff48e;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+    .shop-title {
+        font-size: 1.6rem;
+    }
+}

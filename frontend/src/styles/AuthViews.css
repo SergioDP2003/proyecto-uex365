@@ -1,0 +1,215 @@
+/* AuthViews.css – Estilo bet365 para Login y Register (unificado en verde) */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: radial-gradient(circle at 30% 40%, #1a3a1a 0%, #0e0e0e 80%);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(31, 244, 142, 0.04) 0px,
+        rgba(31, 244, 142, 0.04) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    pointer-events: none;
+    animation: bgMove 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes bgMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.auth-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(31, 244, 142, 0.2);
+    border-radius: 12px;
+    padding: 40px 35px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(31, 244, 142, 0.1);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #1ff48e; /* unificado verde */
+    text-shadow: 0 0 15px rgba(31, 244, 142, 0.4);
+    letter-spacing: 1px;
+}
+
+.auth-error {
+    color: #ff6b6b;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+    background: rgba(255, 107, 107, 0.1);
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.auth-field {
+    margin-bottom: 18px;
+}
+
+.auth-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 12px 14px;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: #1ff48e;
+    box-shadow: 0 0 10px rgba(31, 244, 142, 0.3);
+}
+
+/* Botón principal unificado VERDE */
+.auth-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #126e51, #0e5a40);
+    color: white;
+    box-shadow: 0 4px 15px rgba(18, 110, 81, 0.4);
+}
+
+.auth-button:hover {
+    background: linear-gradient(135deg, #1b8c68, #126e51);
+    box-shadow: 0 6px 20px rgba(18, 110, 81, 0.7);
+    transform: translateY(-2px);
+}
+
+.auth-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.auth-button:active::after {
+    width: 300px;
+    height: 300px;
+}
+
+.auth-link {
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    margin-top: 20px;
+}
+
+.auth-link a {
+    color: #1ff48e;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.auth-link a:hover {
+    color: #b3ffcc;
+    text-shadow: 0 0 8px rgba(31, 244, 142, 0.6);
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 30px 25px;
+    }
+    .auth-title {
+        font-size: 1.7rem;
+    }
+}
+
+.auth-success {
+    color: #1ff48e;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 15px;
+    background: rgba(31, 244, 142, 0.1);
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(31, 244, 142, 0.3);
+}
+
+/* Botón secundario para volver al inicio */
+.auth-back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.auth-back-link:hover {
+    color: #1ff48e;
+    background: rgba(31, 244, 142, 0.05);
+    border-color: rgba(31, 244, 142, 0.4);
+    box-shadow: 0 0 10px rgba(31, 244, 142, 0.2);
+}

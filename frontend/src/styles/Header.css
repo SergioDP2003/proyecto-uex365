@@ -1,0 +1,192 @@
+/* Header.css – Estilo bet365 para el header */
+
+.uex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    background: rgba(14, 14, 14, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(31, 244, 142, 0.25);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.uex-logo a {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1ff48e;
+    text-decoration: none;
+    text-shadow: 0 0 12px rgba(31, 244, 142, 0.6);
+    letter-spacing: 1px;
+    transition: text-shadow 0.3s;
+}
+
+.uex-logo a:hover {
+    text-shadow: 0 0 20px rgba(31, 244, 142, 0.9);
+}
+
+/* Navegación central */
+.uex-header-center {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.uex-header-center span {
+    color: #ccc;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.uex-header-center span:hover {
+    color: #1ff48e;
+    border-bottom-color: #1ff48e;
+}
+
+/* Botones de autenticación */
+.uex-auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.uex-auth-buttons button {
+    font-weight: bold;
+    font-size: 0.95rem;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.uex-register-btn {
+    background: transparent;
+    border: 2px solid #1ff48e !important;
+    color: #1ff48e;
+}
+
+.uex-register-btn:hover {
+    background: rgba(31, 244, 142, 0.1);
+    box-shadow: 0 0 12px rgba(31, 244, 142, 0.4);
+}
+
+.uex-login-btn {
+    background: linear-gradient(135deg, #126e51, #0e5a40);
+    color: white;
+    box-shadow: 0 4px 10px rgba(18, 110, 81, 0.4);
+}
+
+.uex-login-btn:hover {
+    background: linear-gradient(135deg, #1b8c68, #126e51);
+    box-shadow: 0 6px 18px rgba(18, 110, 81, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Menú de perfil (logeado) */
+.uex-profile-menu {
+    position: relative;
+}
+
+.uex-avatar {
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 50%;
+    background: rgba(31, 244, 142, 0.1);
+    border: 1px solid rgba(31, 244, 142, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.uex-avatar:hover {
+    box-shadow: 0 0 15px rgba(31, 244, 142, 0.5);
+}
+
+/* Dropdown */
+.uex-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background: #1a1a1a;
+    border: 1px solid rgba(31, 244, 142, 0.3);
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 200;
+    animation: fadeInDown 0.2s ease-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.uex-dropdown a,
+.uex-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    background: transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.uex-dropdown a:hover,
+.uex-dropdown button:hover {
+    background: rgba(31, 244, 142, 0.08);
+    color: #1ff48e;
+}
+
+.uex-dropdown hr {
+    margin: 5px 10px;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .uex-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+    .uex-header-center {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .uex-auth-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Logo con imagen */
+.uex-logo-img {
+    height: 40px;               /* Ajusta según el tamaño deseado */
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(31, 244, 142, 0.6));
+    transition: filter 0.3s;
+}
+
+.uex-logo a:hover .uex-logo-img {
+    filter: drop-shadow(0 0 14px rgba(31, 244, 142, 0.9));
+}

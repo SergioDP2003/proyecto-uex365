@@ -1,0 +1,126 @@
+/* BetsStats.css – Estilo bet365 para estadísticas de apuestas */
+
+.bets-stats {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(31, 244, 142, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    color: #ddd;
+}
+
+.bets-stats h2 {
+    color: #1ff48e;
+    font-size: 1.3rem;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 8px rgba(31, 244, 142, 0.3);
+}
+
+/* Gráfico de barras */
+.bets-distribution {
+    margin-bottom: 25px;
+}
+
+.chart-container {
+    height: 20px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.bar-segment {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.bar-segment.wins {
+    background: linear-gradient(90deg, #126e51, #1ff48e);
+}
+
+.bar-segment.losses {
+    background: linear-gradient(90deg, #c0392b, #ff6b6b);
+}
+
+.bar-segment.pending {
+    background: linear-gradient(90deg, #7f8c8d, #bdc3c7);
+}
+
+.no-bets {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Leyenda */
+.distribution-legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+}
+
+.legend-color.wins {
+    background: #1ff48e;
+}
+
+.legend-color.losses {
+    background: #ff6b6b;
+}
+
+.legend-color.pending {
+    background: #bdc3c7;
+}
+
+.legend-text {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Detalles de apuestas */
+.bets-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-label {
+    color: #aaa;
+    font-size: 0.95rem;
+}
+
+.detail-value {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.detail-value.positive {
+    color: #1ff48e;
+}
+
+.detail-value.negative {
+    color: #ff6b6b;
+}
