@@ -28,6 +28,7 @@
 - [API](#api)
 - [Solución de problemas](#solución-de-problemas)
 - [Estado del proyecto](#estado-del-proyecto)
+- [Licencia](#licencia)
 
 ## Autores
 
@@ -452,3 +453,9 @@ Esta es la **versión base** del proyecto académico, publicada como punto de pa
 - Se usa SQLite y el servidor de desarrollo de Django.
 - Los eventos no se cierran automáticamente al llegar su fecha de cierre.
 - No hay tests automatizados.
+
+## Licencia
+
+El código fuente se distribuye bajo la **licencia MIT**. Consulta el archivo [LICENSE.md](LICENSE.md) para ver el texto completo.
+
+La licencia cubre **únicamente el código**. Los logotipos e imágenes de `frontend/src/assets/` (`uex365.png`, `uex364_letras.png` y `EscuelaLudopata.png`) quedan **excluidos**: son parodias creadas con fines académicos y se inspiran en marcas de terceros. Si reutilizas el proyecto, sustitúyelos por imágenes propias.
